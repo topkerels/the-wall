@@ -14,7 +14,7 @@ app.set('view options', { layout: false }); // NOTE: express3 remove
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function (req, res) {
-    res.send('Hello world');
+    res.render('main');
 });
 
 app.listen(port);
