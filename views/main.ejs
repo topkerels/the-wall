@@ -1,22 +1,89 @@
-<!doctype html>
-<html class="no-js" lang="">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<%- include head.ejs %>
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
-</head>
-<body>
+<section class="app">
+    <div class="gridster">
+        <ul>
+            <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+                <section>
+                    <header>|||</header>
+                </section>
+            </li>
+            <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+                <section>
+                    <header>|||</header>
+                </section>
+            </li>
+            <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+                <section>
+                    <header>|||</header>
+                </section>
+            </li>
 
-<!-- Add your site or application content here -->
-<p>Hello world!</p>
+            <li data-row="1" data-col="2" data-sizex="2" data-sizey="1">
+                <section>
+                    <header>|||</header>
+                </section>
+            </li>
+            <li data-row="2" data-col="2" data-sizex="2" data-sizey="2">
+                <section>
+                    <header>|||</header>
+                </section>
+            </li>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/scripts/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+            <li data-row="1" data-col="4" data-sizex="1" data-sizey="1">
+                <section>
+                    <header>|||</header>
+                </section>
+            </li>
+            <li data-row="2" data-col="4" data-sizex="2" data-sizey="1">
+                <section>
+                    <header>|||</header>
+                </section>
+            </li>
+            <li data-row="3" data-col="4" data-sizex="1" data-sizey="1">
+                <section>
+                    <header>|||</header>
+                </section>
+            </li>
 
-</body>
-</html>
+            <li data-row="1" data-col="5" data-sizex="1" data-sizey="1">
+                <section>
+                    <header>|||</header>
+                </section>
+            </li>
+            <li data-row="3" data-col="5" data-sizex="1" data-sizey="1">
+                <section>
+                    <header>|||</header>
+                </section>
+            </li>
+
+            <li data-row="1" data-col="6" data-sizex="1" data-sizey="1">
+                <section>
+                    <header>|||</header>
+                </section>
+            </li>
+            <li data-row="2" data-col="6" data-sizex="1" data-sizey="2">
+                <section>
+                    <header>|||</header>
+                </section>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<%- include scripts.ejs %>
+
+<script>
+    'use strict';
+    (function() {
+        $(".gridster ul").gridster({
+            widget_margins: [10, 10],
+            widget_base_dimensions: [140, 140],
+            draggable: {
+                handle: 'header'
+            }
+        }).width("auto");
+    }($));
+</script>
+
+<%- include foot.ejs %>
