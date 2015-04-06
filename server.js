@@ -1,5 +1,7 @@
 var express = require('express'),
-    util = require('util');
+    util = require('util'),
+    Twitter = require('twitter'),
+    config = require('./config');
 
 var app = express();
 
@@ -14,7 +16,15 @@ app.set('view options', { layout: false }); // NOTE: express3 remove
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function (req, res) {
-    res.render('main');
+    var client = new Twitter(config.twitter);
+
+    var params = {screen_name: 'nodejs'};
+    client.get('statuses/user_timeline', params, function(error, tweets, response){
+        if (!error) {
+            console.log(tweets);
+            res.render('main');
+        }
+    });
 });
 
 app.listen(port);

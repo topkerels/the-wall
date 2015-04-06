@@ -13,9 +13,8 @@
   "bugs": { "url": "" },
   "dependencies": {
     "express": "4.12.3",
-    "ejs": "2.3.1"
-  },
-  "devDependencies": {
+    "ejs": "2.3.1",
+    "twitter": "1.2.5"
   },
   "keywords": [],
   "repository": "",
