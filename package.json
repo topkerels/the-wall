@@ -1,0 +1,24 @@
+{
+  "name": "the-wall",
+  "description": "",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Topkerels",
+  "homepage": "",
+  "contributors": [ 
+    "Shaun Janssens (https://github.com/shaunjanssens)",
+    "Anthony Meirlaen (https://github.com/Toinne)",
+    "Pieter Van Molle (https://github.com/pvmolle)"
+  ],
+  "bugs": { "url": "" },
+  "dependencies": {
+    "express": "4.12.3",
+    "ejs": "2.3.1"
+  },
+  "devDependencies": {
+  },
+  "keywords": [],
+  "repository": "",
+  "licenses": [{
+  }]
+}
