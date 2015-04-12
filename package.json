@@ -14,7 +14,7 @@
   "dependencies": {
     "express": "4.12.3",
     "ejs": "2.3.1",
-    "twitter": "1.2.5"
+    "node-twitter-api": "1.5.0"
   },
   "keywords": [],
   "repository": "",
