@@ -15,13 +15,13 @@ app.set('view options', { layout: false }); // NOTE: express3 remove
 app.use(express.static(__dirname + '/public'));
 
 /**
- * TWITTER oauth authentication
+ * TWITTER OAUTH
  */
 var twitterAPI = require('node-twitter-api');
 var twitter = new twitterAPI({
-    consumerKey: config.consumer_key,
-    consumerSecret: config.consumer_secret,
-    callback: 'https://topkerels.herokuapp.com/services/twitter/oauth'
+    consumerKey: config.twitter.consumer_key,
+    consumerSecret: config.twitter.consumer_secret,
+    callback: 'https://topkerels.herokuapp.com/oauth/twitter/callback'
 });
 var fakeTwitterDb = {};
 
