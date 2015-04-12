@@ -23,7 +23,7 @@ var twitter = new twitterAPI({
     consumerSecret: config.twitter.consumer_secret,
     callback: 'https://topkerels.herokuapp.com/oauth/twitter/callback'
 });
-var fakeTwitterDb = {};
+var localTwitterDb = {};
 
 
 app.get('/', function (req, res) {
@@ -35,18 +35,19 @@ app.get('/authenticate', function (req, res) {
         if (error) {
             console.log("Error getting OAuth request token : " + error);
         } else {
-            fakeTwitterDb[requestToken] = requestTokenSecret;
+            localTwitterDb[requestToken] = requestTokenSecret;
             res.redirect(twitter.getAuthUrl(requestToken));
         }
     });
 });
 
 app.get('/oauth/twitter/callback', function (req, res) {
-    twitter.getAccessToken(req.oauth_token, fakeTwitterDb[req.oauth_token], req.oauth_verifier, function(error, accessToken, accessTokenSecret, results) {
+    twitter.getAccessToken(req.query.oauth_token, localTwitterDb[req.query.oauth_token], req.query.oauth_verifier, function(error, accessToken, accessTokenSecret, results) {
         if (error) {
             console.log(error);
         } else {
             req.cookie('credentials', '1', {accessToken: accessToken, accessTokenSecret: accessTokenSecret});
+            res.send('authenticated');
         }
     });
 });
