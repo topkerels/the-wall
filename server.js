@@ -46,7 +46,12 @@ app.get('/oauth/twitter/callback', function (req, res) {
         if (error) {
             console.log(error);
         } else {
-            req.cookie('credentials', '1', {accessToken: accessToken, accessTokenSecret: accessTokenSecret});
+            localTwitterDb[req.query.oauth_token] = {
+                requestTokenSecret: localTwitterDb[req.query.oauth_token],
+                accessToken: accessToken,
+                accessTokenSecret: accessTokenSecret
+            };
+
             res.send('authenticated');
         }
     });
