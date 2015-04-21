@@ -3,69 +3,30 @@
 <section class="app">
     <div class="gridster">
         <ul>
-            <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-                <section>
-                    <header>|||</header>
-                </section>
-            </li>
-            <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
-                <section>
-                    <header>|||</header>
-                </section>
-            </li>
-            <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
-                <section>
-                    <header>|||</header>
-                </section>
-            </li>
+            <li data-row="1" data-col="1" data-sizex="3" data-sizey="5" class="module-twitter">
+                <div class="drag"></div>
+                <div class="header">
+                    <span>#Hashtag</span><a href="#" id="add">+</a>
+                </div>
 
-            <li data-row="1" data-col="2" data-sizex="2" data-sizey="1">
-                <section>
-                    <header>|||</header>
-                </section>
-            </li>
-            <li data-row="2" data-col="2" data-sizex="2" data-sizey="2">
-                <section>
-                    <header>|||</header>
-                </section>
-            </li>
+                <div class="add">
+                    <form action="">
+                        <input type="text" name="hashtag" placeholder="#hashtag"/>
+                        <input type="submit" name="submit" value="Toevoegen" />
+                    </form>
+                </div>
 
-            <li data-row="1" data-col="4" data-sizex="1" data-sizey="1">
-                <section>
-                    <header>|||</header>
-                </section>
+                <div class="tweet">
+                    <div class="avatar"><img src="https://pbs.twimg.com/profile_images/476367219878678529/ySUTiAEr_bigger.png" alt=""/></div>
+                    <div class="content">
+                        <div class="username">Shaun Janssens <a href="#" title="">@shaunjanssens</a></div>
+                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto beatae blanditiis dolorem esse.</div>
+                        <div class="time">15 minuten geleden</div>
+                    </div>
+                </div>
             </li>
-            <li data-row="2" data-col="4" data-sizex="2" data-sizey="1">
-                <section>
-                    <header>|||</header>
-                </section>
-            </li>
-            <li data-row="3" data-col="4" data-sizex="1" data-sizey="1">
-                <section>
-                    <header>|||</header>
-                </section>
-            </li>
-
-            <li data-row="1" data-col="5" data-sizex="1" data-sizey="1">
-                <section>
-                    <header>|||</header>
-                </section>
-            </li>
-            <li data-row="3" data-col="5" data-sizex="1" data-sizey="1">
-                <section>
-                    <header>|||</header>
-                </section>
-            </li>
-
-            <li data-row="1" data-col="6" data-sizex="1" data-sizey="1">
-                <section>
-                    <header>|||</header>
-                </section>
-            </li>
-            <li data-row="2" data-col="6" data-sizex="1" data-sizey="2">
-                <section>
-                    <header>|||</header>
-                </section>
+            <li data-row="1" data-col="1" data-sizex="3" data-sizey="5" class="module-agenda">
+                <div class="drag"></div>
             </li>
         </ul>
     </div>
@@ -80,9 +41,13 @@
             widget_margins: [10, 10],
             widget_base_dimensions: [140, 140],
             draggable: {
-                handle: 'header'
+                handle: '.drag'
             }
         }).width("auto");
+
+        $("#add").click(function() {
+           $(".add").toggle();
+        });
     }($));
 </script>
 
